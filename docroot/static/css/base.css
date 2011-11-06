@@ -1,0 +1,57 @@
+body {
+margin: 0;
+padding: 0;
+background: #092E20;
+color: white;
+}
+
+#container {
+position: relative;
+min-width: 55em;
+max-width: 100em;
+}
+#header {
+position: relative;
+height: 6.5em;
+background: #092E20;
+}
+#header h1#logo {
+margin: 0;
+width: 111px;
+height: 41px;
+position: absolute;
+bottom: 10px;
+left: 25px;
+}
+#nav-global {
+position: absolute;
+margin: 0;
+bottom: 0;
+right: 0;
+font-family: "Trebuchet MS",sans-serif;
+white-space: nowrap;
+}
+#nav-global li {
+display: block;
+float: left;
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+#nav-global a {
+display: block;
+float: left;
+padding: 5em 16px 10px 16px;
+background: #092E20;
+}
+a:link, a:visited {
+color: #FFC757;
+}
+#main {
+float: left;
+width: 100%;
+height: 100%;
+background: white;
+color: black;
+padding-bottom: 10px;
+}
