@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/adidas/templates/default
+END
+django.wsgi.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/adidas/templates/default/django.wsgi.erb
+END
+vagrant.conf.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/adidas/templates/default/vagrant.conf.erb
+END

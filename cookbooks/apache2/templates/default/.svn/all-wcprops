@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default
+END
+charset.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/charset.erb
+END
+a2ensite.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/a2ensite.erb
+END
+apache2.god.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/apache2.god.erb
+END
+ports.conf.erb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/ports.conf.erb
+END
+mod_auth_openid.rb.erb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/mod_auth_openid.rb.erb
+END
+web_app.conf.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/web_app.conf.erb
+END
+a2dismod.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/a2dismod.erb
+END
+a2enmod.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/a2enmod.erb
+END
+port_apache.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/port_apache.erb
+END
+default-site.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/default-site.erb
+END
+a2dissite.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/a2dissite.erb
+END
+apache2.conf.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/apache2.conf.erb
+END
+security.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/adidasLookBook/!svn/ver/813/branches/stage2/cookbooks/apache2/templates/default/security.erb
+END

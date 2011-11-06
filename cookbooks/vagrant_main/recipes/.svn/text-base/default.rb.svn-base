@@ -1,0 +1,96 @@
+
+require_recipe "apt"
+require_recipe "mysql::server"
+
+
+mysql_shell = "/usr/bin/mysql -u root -p#{node[:mysql][:server_root_password]}"
+mysqladmin_shell = "/usr/bin/mysqladmin -u root -p#{node[:mysql][:server_root_password]}"
+
+execute "create #{node['adidas']['db']['database']} database" do
+  #command "#{mysqladmin_shell} create #{node['adidas']['db']['database']} --default-character-set=utf8"
+  command "echo \"CREATE DATABASE #{node['adidas']['db']['database']} CHARACTER SET utf8;\" | #{mysql_shell}"
+  not_if %[echo "show databases" | #{mysql_shell} | grep #{node['adidas']['db']['database']}]
+end
+
+require_recipe "python"
+require_recipe "python::pip"
+require_recipe "apache2"
+require_recipe "apache2::mod_wsgi"
+
+
+execute "install gettext..." do
+    cwd node[:home_folder]
+    user "root"
+    command "sudo apt-get install gettext -y"
+end
+
+execute "install_requirements" do
+    cwd node[:home_folder]
+    user "root"
+    command "pip install -r #{node[:source_folder]}requirements_ubuntu.txt"
+end
+
+execute "install python-imaging" do
+    cwd node[:home_folder]
+    user "root"
+    command "sudo apt-get install python-imaging -y"
+end
+
+
+
+template "#{node[:apache][:dir]}/sites-available/django.wsgi" do
+  source "django.wsgi.erb"
+  owner "root"
+  group "root"
+  mode 0644
+end
+
+template "#{node[:apache][:dir]}/sites-available/adidas" do
+  source "vagrant.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
+end
+
+execute "disable-default-site" do
+  command "sudo a2dissite default"
+  #notifies :restart, resources(:service => "apache2")
+end
+
+execute "django syncdb in #{node[:source_folder]}#{node[:project_name]}" do
+    cwd "#{node[:source_folder]}#{node[:project_name]}"
+    user "root"
+    command "python manage.py syncdb --noinput"
+end
+
+execute "django migrate in #{node[:source_folder]}#{node[:project_name]}" do
+    cwd "#{node[:source_folder]}#{node[:project_name]}"
+    user "root"
+    command "python manage.py migrate --all --noinput"
+end
+
+execute "load initial data" do
+    cwd "#{node[:source_folder]}#{node[:project_name]}"
+    user "root"
+    command "python manage.py loaddata data template products university_data"
+end
+
+execute "load dev data from oct 19, 2011" do
+    cwd "#{node[:source_folder]}#{node[:project_name]}"
+    user "root"
+    command "python manage.py loaddata dev_data_20111019 && python manage.py migrate --fake && python manage.py migrate stage2 0006 && python manage.py migrate stage2"
+    not_if %[echo "select * from stage2_itemvote;" | #{mysql_shell} #{node['adidas']['db']['database']} | grep id]
+end
+
+execute "enable-adidas" do
+  command "sudo a2ensite adidas"
+  notifies :restart, resources(:service => "apache2")
+  
+end
+
+cron "cron_jobs for adidas" do
+  user "vagrant"
+  minute "*/1"
+  home "/home/vagrant/source/adidas"
+  command "$HOME/manage.py popular_look_job >> /tmp/adidas_cron2.out 2 >> &1"
+end
