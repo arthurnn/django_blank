@@ -1,4 +1,12 @@
-# Django settings for petlook project.
+'''
+@author: arthurnn
+'''
+from os.path import abspath, dirname, join
+
+
+
+PROJECT_ROOT = abspath(join(dirname(__file__), "../"))
+
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -89,9 +97,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (

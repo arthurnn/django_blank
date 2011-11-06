@@ -34,8 +34,7 @@ Vagrant::Config.run do |config|
     chef.json.merge!({ :mysql_password => "root",
 					:django_settings => "development",
 					:project_name => "django_blank",
-                   	:home_folder => "/home/vagrant/source/",
-                   	:source_folder => "/home/vagrant/source/django_blank/" })    
+                   	:home_folder => "/home/vagrant/source/" })    
     
     
   end

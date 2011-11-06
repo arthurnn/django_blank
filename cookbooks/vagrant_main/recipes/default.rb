@@ -36,20 +36,20 @@ execute "install python-imaging" do
     command "sudo apt-get install python-imaging -y"
 end
 
-execute "django syncdb in #{node[:source_folder]}" do
-    cwd "#{node[:source_folder]}"
+execute "django syncdb in #{node[:home_folder]}" do
+    cwd "#{node[:home_folder]}"
     user "root"
     command "python manage.py syncdb --noinput"
 end
 
-execute "django migrate in #{node[:source_folder]}" do
-    cwd "#{node[:source_folder]}"
+execute "django migrate in #{node[:home_folder]}" do
+    cwd "#{node[:home_folder]}"
     user "root"
     command "python manage.py migrate --all --noinput"
 end
 
-execute "django collectstatic in #{node[:source_folder]}" do
-    cwd "#{node[:source_folder]}"
+execute "django collectstatic in #{node[:home_folder]}" do
+    cwd "#{node[:home_folder]}"
     user "root"
     command "python manage.py collectstatic --noinput"
 end

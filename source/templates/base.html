@@ -1,0 +1,59 @@
+{% load i18n %}
+<html>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta http-equiv="pragma" content="no-cache">
+
+		<title>{% block page_title %}{% trans 'Django Blank' %}{% endblock page_title %}</title>
+
+		<!--[if lt IE 9]><!--><meta http-equiv="X-UA-Compatible" content="IE=7"><!--<![endif]-->
+        
+		<meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}">
+		<meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
+        
+		<meta name="author" content="">
+		<meta name="google-site-verification" content="" />
+
+		<meta property="fb:admins" content="" />
+		{% block facebook_meta %}
+    	{% endblock %}
+
+		<link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}images/favicon.ico">
+
+		{% block css %}
+			<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css">
+    
+            <!--[if IE 8]>
+                <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/ie8.css">
+            <![endif]-->
+    
+            <!--[if IE 7]>
+                <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/ie7.css">
+            <![endif]-->
+
+		{% endblock %}
+
+		<script type="text/javascript">
+			var __LANGUAGE_CODE = '{{ LANGUAGE_CODE }}';
+		</script>
+
+		{% block js %}
+			<script src="{{ STATIC_URL }}js/libs/modernizr-2.0.6.js"></script>
+			<script src="{{ STATIC_URL }}js/libs/respond.min.js"></script>
+		{% endblock %}
+
+		<!--[if lt IE 9]>
+			<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		{% block additional_headers %}{% endblock additional_headers %}
+
+	</head>
+
+	<body>
+		{% block content %}{% endblock content %}
+	</body>
+
+</html>
