@@ -54,13 +54,6 @@ execute "django collectstatic in #{node[:home_folder]}" do
     command "python manage.py collectstatic --noinput"
 end
 
-template "#{node[:apache][:dir]}/sites-available/django.wsgi" do
-  source "django.wsgi.erb"
-  owner "root"
-  group "root"
-  mode 0644
-end
-
 template "#{node[:apache][:dir]}/sites-available/default" do
   source "vagrant.conf.erb"
   owner "root"
