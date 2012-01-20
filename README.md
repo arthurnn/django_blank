@@ -17,13 +17,13 @@ What is included
 Installation
 ------------
 
-* First of all, install Vagrant:
+* First of all, install Vagrant:  
 	`gem install vagrant`
 	
-* After install it, go to the project project and run:
+* After install it, go to the project folder and run:  
 	`vagrant up`
 	
-* See it working:
+* Working:  
 	go to: `http://localhost:8888`
 	or go to: `http://33.33.33.88`
 	
