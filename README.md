@@ -1,12 +1,14 @@
 Django Blank project
-=================
+====================
+This is a basic django project, which will run in a virtual machine and using vagrant to create/manage it.  
+
 
 
 What is included
 ----------------
-* Vagrant
+* Vagrant 0.9
 * MySQL
-* Django 1.3
+* Django 1.3.1
 * South(migration)
 * boto(amazon aws)
 * Boilerplate HTML5
@@ -42,6 +44,6 @@ Troubleshooting
 		
 		
 
-For any further question, fell free to tweet me: `@arthurnn89`
+For any further question, fell free to tweet me: `@arthurnn`
 
 
