@@ -2,6 +2,7 @@ Django Blank project
 ====================
 This is a basic django project, which will run in a virtual machine and using vagrant to create/manage it.  
 
+http://vagrantup.com/
 
 
 What is included
