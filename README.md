@@ -5,6 +5,10 @@ This is a basic django project, which will run in a virtual machine and using va
 http://vagrantup.com/
 
 
+Important note
+----------------
+This project was not tested with the latest version of Vagrant 1.x. I will be updating this project soon to add support for the latest vagrant as well as latest Django.
+
 What is included
 ----------------
 * Vagrant 0.9
