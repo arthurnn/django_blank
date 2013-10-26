@@ -52,3 +52,7 @@ Troubleshooting
 For any further question, fell free to tweet me: `@arthurnn`
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arthurnn/django_blank/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
